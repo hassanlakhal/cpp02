@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:00 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/09 08:28:24 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:53:24 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,13 @@ Fixed Fixed::operator / (const int a)
 bool Fixed::operator == (const Fixed& other)
 {
     if (fixed == other.fixed)
+      return true;
+    else
+        return false;
+}
+bool Fixed::operator < (int a)
+{
+    if (fixed < a)
       return true;
     else
         return false;

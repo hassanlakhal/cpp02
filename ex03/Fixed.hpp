@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:03 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/09 08:28:54 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/09 09:51:27 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ public:
     Fixed operator + (const Fixed& other);
     Fixed operator / (const int a);
     bool operator == (const Fixed& other);
+    bool operator < (int a);
     ~Fixed();
     float toFloat( void ) const;
     int toInt( void ) const;
