@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:17 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/09 08:54:33 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/11 18:52:17 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ class Point
         Point(const Point& other);
         Fixed area(Fixed x1,Fixed y1, Fixed x2, Fixed y2, Fixed x3, Fixed y3);
         Point& operator=(const Point &other);
-        bool bsp( Point const a, Point const b, Point const c, Point const point);
+        Fixed getArea(Point const a, Point const b, Point const c, Point const point, int level); 
         static void dispaly(Point const a, Point const b, Point const c, Point const point);
         ~Point();
 };
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 
 

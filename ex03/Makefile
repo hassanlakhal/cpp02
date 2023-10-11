@@ -6,13 +6,13 @@
 #    By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 05:22:10 by hlakhal-          #+#    #+#              #
-#    Updated: 2023/10/09 05:23:20 by hlakhal-         ###   ########.fr        #
+#    Updated: 2023/10/11 18:16:19 by hlakhal-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Fixed
 
-SRC = main.cpp  Fixed.cpp Point.cpp
+SRC = main.cpp  Fixed.cpp Point.cpp bsp.cpp
 
 CXXFLAGS = -Wall -Wextra -Werror
 
