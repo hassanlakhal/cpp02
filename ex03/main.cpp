@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:07 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/11 19:09:30 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/11 20:02:13 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int main()
     Point a(0,0);
     Point b (1,0);
     Point c (0,1);
-    Point i(1,2);
-    // Point i;
-    // i = a;
+    // Point i(1,2);
+    Point i;
+    i = a;
     Point::dispaly(a,b,c,i);
     // std::cout << A << std::endl;
    // std::cout << b << std::endl;

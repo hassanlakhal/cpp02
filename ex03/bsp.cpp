@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:09:53 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/11 18:56:31 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/11 20:02:55 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
     
     Point A, A1, A2 ,A3;
+    if (A1.getArea(a,b,c,point,1) == Fixed(0) || A2.getArea(a,b,c,point,2) == Fixed(0) || A3.getArea(a,b,c,point,3) == Fixed(0))
+       return false;
     return A.getArea(a,b,c,point,0) == (A1.getArea(a,b,c,point,1) + A2.getArea(a,b,c,point,2) + A3.getArea(a,b,c,point,3));
 }
