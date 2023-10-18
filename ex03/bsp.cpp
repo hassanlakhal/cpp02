@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:09:53 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/11 20:02:55 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:06:15 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 Fixed Point::area(Fixed x1,Fixed y1, Fixed x2, Fixed y2, Fixed x3, Fixed y3)
 {
     Fixed det;
-    det =  (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
+    det =  ((x1 * (y2 - y3)) + (x2 * (y3 - y1)) + (x3 * (y1 - y2)));
     if (det < 0)
-       det = det * Fixed(-1);
-    
+        det = det * Fixed(-1);
     return det / 2;
 }
 

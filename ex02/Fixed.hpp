@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 23:52:47 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/08 20:40:48 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/17 22:47:01 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ public:
     bool operator != (const Fixed& other); 
     Fixed operator + (const Fixed& other);
     Fixed operator - (const Fixed& other);
-    Fixed operator * (const Fixed& other);
-    Fixed operator / (const Fixed& other);
+    Fixed &operator * (const Fixed& other);
+    Fixed &operator / (const Fixed& other);
     Fixed &operator ++();
     Fixed &operator --();
     Fixed operator ++(int);
@@ -48,6 +48,8 @@ public:
     static Fixed& max(const Fixed &a, const Fixed &b);
     static  Fixed& min(Fixed &a, Fixed &b) ;
     static Fixed& min(const Fixed &a, const Fixed &b);
+    int getRawBits( void ) const;
+    void setRawBits( int const raw );
 };
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 #endif 

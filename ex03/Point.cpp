@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:13 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/11 18:15:06 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:07:28 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ Point::~Point()
 
 void Point::dispaly(Point const a, Point const b, Point const c, Point const point)
 {
-    // Point other;
-    // std::cout << other.bsp(a,b,c,point) << std::endl;
     if (bsp(a,b,c,point))
        std::cout << "Inside" << std::endl;
     else

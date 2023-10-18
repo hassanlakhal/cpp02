@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 05:22:00 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/09 09:53:24 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:19:11 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,13 @@ int Fixed::toInt(void) const
 }
 Fixed Fixed::operator - (const Fixed& other)
 {
-    return Fixed(this->toFloat() - other.toFloat());
+    return Fixed(this->fixed - other.fixed);
 }
 
-Fixed Fixed::operator*(const Fixed& other)
+Fixed &Fixed::operator*(const Fixed& other)
 {
-    return Fixed(other.toFloat() * this->toFloat());
+    this->fixed *= (other.fixed / (1 << fracBit));
+    return *this;
 }
 Fixed Fixed::operator + (const Fixed& other)
 {
@@ -72,11 +73,15 @@ Fixed Fixed::operator + (const Fixed& other)
     fixed += other.fixed;
     return *this;
 }
-Fixed Fixed::operator / (const int a)
+Fixed &Fixed::operator / (const int a)
 {
     if (a == 0)
-        return Fixed(0);
-    return Fixed(this->toFloat() / a);
+    {
+        this->fixed = 0;
+        return *this;
+    }
+    this->fixed /= a;
+    return *this;
 }
 bool Fixed::operator == (const Fixed& other)
 {

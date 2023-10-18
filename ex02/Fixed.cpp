@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 23:51:59 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/10/08 20:42:33 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/10/17 22:47:33 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,23 +119,26 @@ Fixed Fixed::operator + (const Fixed& other)
 
 Fixed Fixed::operator - (const Fixed& other)
 {
-    return Fixed(this->toFloat() - other.toFloat());
+    return Fixed(this->fixed - other.fixed);
 }
 
-Fixed Fixed::operator*(const Fixed& other)
+Fixed &Fixed::operator*(const Fixed& other)
 {
-    return Fixed(other.toFloat() * this->toFloat());
+    this->fixed *= other.fixed / (1 << fracBit);
+    return  *this;
 }
 
 
-Fixed Fixed::operator / (const Fixed& other)
+Fixed &Fixed::operator / (const Fixed& other)
 {
     if (other.fixed == 0)
     {
         std::cout << "Form indefine" << std::endl;
-        return Fixed(0);
+        this->fixed = 0;
+        return *this;
     }
-    return Fixed(this->toFloat() / other.toFloat());
+    this->fixed /= other.fixed * (1 << fracBit);
+    return *this;
 }
 
 Fixed &Fixed::operator++()
@@ -186,4 +189,13 @@ Fixed& Fixed::min(Fixed &a, Fixed &b)
 Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
     return((compare(a,b,false)) ? (Fixed &)a:(Fixed &)b);
+}
+int Fixed::getRawBits( void )  const
+{
+    return fixed;
+}
+
+void Fixed::setRawBits( int const raw)
+{
+    fixed = raw;
 }
